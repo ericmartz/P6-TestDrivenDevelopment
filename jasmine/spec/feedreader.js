@@ -27,16 +27,44 @@ $(function() {
         });
 
 
-        /* TODO: Write a test that loops through each feed
+        /* TODO[Complete]: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
+         /* For modularity, I separated the tests that the URL is 
+          * defined and that the URL is not empty.
+          * Mostly, It looks like making tests unique and testing
+          * one item is a good idea, even if it has multiple expectations.
+          */
+        it('has URL', function(){
+            allFeeds.forEach(function(feed){
+                expect(feed.url).toBeDefined();
+            });
+        });
 
+        it('URL is not empty', function(){
+            allFeeds.forEach(function(feed){
+                expect(feed.url).not.toBeNull();
+                expect(feed.url).toContain("http://");
+            });
+        });
 
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+        it('has name', function(){
+            allFeeds.forEach(function(feed){
+                expect(feed.url).toBeDefined();
+            });
+        });
+
+        it('name is not empty', function(){
+            allFeeds.forEach(function(feed){
+                expect(feed.url).not.toBeNull();
+                expect(feed.url).toContain("http://");
+            });
+        });
     });
 
 
