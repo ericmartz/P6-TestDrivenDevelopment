@@ -43,7 +43,7 @@ $(function() {
           * Mostly, It looks like making tests unique and testing
           * one item is a good idea, even if it has multiple expectations.
           */
-        it('has URL', function(){
+        it('has a URL', function(){
             allFeeds.forEach(function(feed){
                 expect(feed.url).toBeDefined();
             });
@@ -64,7 +64,7 @@ $(function() {
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
-        it('has name', function(){
+        it('has a name', function(){
             allFeeds.forEach(function(feed){
                 expect(feed.name).toBeDefined();
             });
@@ -181,7 +181,7 @@ $(function() {
     });
     /* TODO[Complete]: Write a new test suite named "New Feed Selection" */
     describe('New Feed Selection', function(){
-        /* TODO: Write a test that ensures when a new feed is loaded
+        /* TODO[Complete]: Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
@@ -204,8 +204,47 @@ $(function() {
 
             /* Checking if the new feed and original feed HTML is different */
             expect(feedContentPostChange).not.toEqual(feedContentPreChange);
-            
+
             done();
+        });
+    });
+
+    /* Tests below are for future functionality.
+     * The describe block will run.  But the tests within are xit blocks
+     * which should show as pending, but will not run.
+     */
+    describe('Future Functionality', function(){
+
+        /* I wrote this test looking at the template for the feeds
+         * There is a place for a contentSnippet, so I figured we should
+         * test for that.
+         */
+        xit('should show content snippet', function(){
+            allFeeds.forEach(function(feed){
+                /* First we check to make sure the contentSnippet exists. */
+                expect(feed.contentSnippet).toBeDefined();
+
+                /* Second we make sure that there is a value in there. */
+                expect(feed.contentSnippet).toBeTruthy();
+            });
+        });
+
+        /* One functionality I thought would be cool is if the Feed Reader
+         * loaded the entry content as an AJAX request.  So instead leaving the
+         * Feed Reader when a user clicks, you could have the article show up as an
+         * accordian type functionality.
+         */ 
+        xit('should load content as an AJAX request', function(){
+            /* So, I am just labeling this as a test stub. */
+            /* I fooled around with it for awhile, but wasn't sure how to test
+             * that we got content and then added it to our application.
+             * I saw in the AJAX request results there is a summary and a description
+             * but not anything more.  So it may be that without an API to get the content
+             * of the clicked entry, this idea is not currently possible.
+             * Also, there may be copyright issues. Not that I want to steal content,
+             * just make it easier for the reader to click items without leaving
+             * the Feed Reader.
+             */
         });
     });
 }());
