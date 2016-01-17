@@ -22,3 +22,11 @@ There are 9 tests that run against the existing application:
 There is a describe block that holds several xit blocks.
 The xit blocks are pending tests for future functionality.
 1. Future Functionality should show content snippet.
+  - This tests that a contentSnippet is added to each entry
+  - In the AJAX response, there is a description field and a summary field. 
+    - Either of these could be used to provide a contentSnippet
+2. Future Functionality should load content as an AJAX request
+  - This is just a test stub, not test exists yet.
+  - The idea is that when an entry is clicked, content is obtained from the link
+    which is then added to the Feed Reader.  This way the user can get the content
+    without leaving the Feed Reader.
