@@ -186,6 +186,16 @@ $(function() {
          * Remember, loadFeed() is asynchronous.
          */
 
+        /* Documented this is in the README file, but I wanted to also put this
+         * here in the file. Initially, I thought that I would somehow use a spy
+         * to track changes being made to the feed, but it did not look like that
+         * would work after reading the documentation.  After that I had trouble
+         * wrapping my head around how to test this and checked the forums.
+         * Got some good help from the following posts:
+         * https://discussions.udacity.com/t/last-test-in-the-project/15118/2
+         * https://discussions.udacity.com/t/project-6-final-test-issue/17187
+         */
+
         /* First store the feed HTML in a variable */
         var feedContentPreChange = $('.feed').html();
         
